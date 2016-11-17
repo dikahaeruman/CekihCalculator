@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1479351566 source:c:\users\vanestorz\documents\programming\c++\cekihcalc\main.cpp
+	<iostream>
+	<stdlib.h>
+
