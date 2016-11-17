@@ -1,7 +1,9 @@
 #include <iostream>
+#include <stdlib.h>
 
 using namespace std;
-
+void tambahPemain();
+string pemain[4];
 int main()
 {
     int pilih=0;
@@ -16,4 +18,21 @@ int main()
     cout<<"5. Hall of Shame\n";
     cout<<"===============================\n";
     cout<<"Pilih: ";cin>>pilih;
+    switch(pilih){
+    case 1:{
+        tambahPemain();
+        break;
+    }
+    }
+
+}
+
+void tambahPemain(){
+    system("cls");
+    cout<<"================================\n";
+    cout<<"King of the Iron Ceki Tournament\n";
+    cout<<"================================\n";
+for(int i = 0;i<=3;i++){
+    cout<<"Nama Pemain " << i+1 << " : ";cin>>pemain[i];
+}
 }
