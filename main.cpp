@@ -1,5 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
+#include <conio.h>
+#include <cstdlib>
 #include <algorithm>
 
 using namespace std;
@@ -19,8 +21,10 @@ bool sort_skor(players const& lhs,players const&rhs);
 bool terendah(players const& lhs,players const&rhs);
 int main()
 {
-    int pilih=0;
-    while(pilih != 5){
+
+    int pilih=0,endgame;
+    cout<<"Masukan Skor Maksimal : ";cin>>endgame;
+    while(player[0].skor <= endgame && player[1].skor <= endgame && player[2].skor <= endgame && player[3].skor <= endgame){
     system("cls");
     cout<<"===============================\n";
     cout<<"CEKIH CALCULATOR BY ANDHIKA.H.S\n";
@@ -51,8 +55,19 @@ int main()
         resetSkor();
         break;
     }
-        }
+    case 5:{
+      std::abort();
     }
+            }
+    }
+    cout<<"=====================\n";
+    cout<<"   CONGRATULATIONS   \n";
+    cout<<"=====================\n";
+    cout<<player[0].pemain<<" Menjadi juara dengan skor " << player[0].skor << " dalam Iron Cekih Tournament!!!\n";
+    cout<<"Tekan Enter untuk melihat hasil akhir...";
+    getch();
+    system("cls");
+    lihatSkor();
 }
 
 void tambahPemain(){
