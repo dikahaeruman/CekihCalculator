@@ -34,7 +34,9 @@ int main(int argc, char *argv[])
         cout << "Input Salah!!!!\nMasukan Skor Maksimal: ";
         cin>>endgame;
     }
-    while(player[0].skor <= endgame && player[1].skor <= endgame && player[2].skor <= endgame && player[3].skor <= endgame){
+    /*int invEndGame = 0;
+    invEndGame = invEndGame - endgame;*/
+    while((player[0].skor < endgame && player[1].skor < endgame && player[2].skor < endgame && player[3].skor < endgame) && (player[0].skor > -endgame && player[1].skor > -endgame && player[2].skor > -endgame && player[3].skor > -endgame)){
     system("cls");
     cout<<"==============================================================\n";
     cout<<"               CEKIH CALCULATOR BY ANDHIKA.H.S\n";
@@ -66,6 +68,7 @@ int main(int argc, char *argv[])
     }
             }
     }
+    std::sort(player, player+4, &sort_skor);
     cout<<"=====================\n";
     cout<<"   CONGRATULATIONS   \n";
     cout<<"=====================\n";
