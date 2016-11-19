@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <cstdlib>
+#include <limits>
 #include <algorithm>
 
 using namespace std;
@@ -10,7 +11,7 @@ int skor;
 string pemain;
 }player[4];
 
-int round = 0,skorTemp = 0;
+int round = 0,skorTemp = 0,endgame;
 
 void tambahPemain();
 void hitungSkor();
@@ -24,8 +25,15 @@ bool terendah(players const& lhs,players const&rhs);
 int main(int argc, char *argv[])
 {
 
-    int pilih=0,endgame;
+    int pilih=0;
     cout<<"Masukan Skor Maksimal : ";cin>>endgame;
+    while(cin.fail()){
+        system("cls");
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(),'\n');
+        cout << "Input Salah!!!!\nMasukan Skor Maksimal: ";
+        cin>>endgame;
+    }
     while(player[0].skor <= endgame && player[1].skor <= endgame && player[2].skor <= endgame && player[3].skor <= endgame){
     system("cls");
     cout<<"==============================================================\n";
@@ -82,6 +90,7 @@ for(int i = 0;i<=3;i++){
 
 void lihatSkor(){
     std::sort(player, player+4, &sort_skor);
+    cout<<"               SKOR MAKSIMAL : " << endgame << "\n";
     cout<<"==============================================================\n";
     cout<<"               SKOR PERTANDINGAN TURNAMEN CEKIH\n";
     cout<<"==============================================================\n";
