@@ -27,17 +27,17 @@ int main(int argc, char *argv[])
     cout<<"Masukan Skor Maksimal : ";cin>>endgame;
     while(player[0].skor <= endgame && player[1].skor <= endgame && player[2].skor <= endgame && player[3].skor <= endgame){
     system("cls");
-    cout<<"===============================\n";
-    cout<<"CEKIH CALCULATOR BY ANDHIKA.H.S\n";
-    cout<<"===============================\n";
+    cout<<"==============================================================\n";
+    cout<<"               CEKIH CALCULATOR BY ANDHIKA.H.S\n";
+    cout<<"==============================================================\n";
     cout<<"Main Menu:\n";
     cout<<"1. Tambah Pemain\n";
     cout<<"2. Hitung Skor\n";
-    cout<<"3. Hall of Shame\n";
-    cout<<"4. Reset Skor\n";
-    cout<<"5. Exit Program\n";
-    cout<<"===============================\n";
+    cout<<"3. Reset Skor\n";
+    cout<<"4. Exit Program\n";
+    cout<<"==============================================================\n";
     lihatSkor();
+    hallofShame();
     cout<<"Pilih: ";cin>>pilih;
     switch(pilih){
     case 1:{
@@ -49,14 +49,10 @@ int main(int argc, char *argv[])
         break;
     }
     case 3:{
-        hallofShame();
-        break;
-    }
-    case 4:{
         resetSkor();
         break;
     }
-    case 5:{
+    case 4:{
       return EXIT_SUCCESS;
     }
             }
@@ -83,13 +79,14 @@ for(int i = 0;i<=3;i++){
 
 void lihatSkor(){
     std::sort(player, player+4, &sort_skor);
-    cout<<"================================\n";
-    cout<<"SKOR PERTANDINGAN TURNAMEN CEKIH\n";
-    cout<<"================================\n";
+    cout<<"==============================================================\n";
+    cout<<"               SKOR PERTANDINGAN TURNAMEN CEKIH\n";
+    cout<<"==============================================================\n";
     cout<<"No.\t" << "Nama Pemain\t\t" << "Skor\n";
     for(int i = 0;i<=3;i++){
         cout<< i+1 << ".\t" << player[i].pemain << "\t\t\t" << player[i].skor << "\n";
     }
+    cout<<"==============================================================\n";
 }
 
 void hitungSkor(){
@@ -107,14 +104,8 @@ void resetSkor(){
 }
 
 void hallofShame(){
-    system("cls");
-    std::sort(player, player+4, &terendah);
-    cout<<"=============\n";
-    cout<<"HALL OF SHAME\n";
-    cout<<"=============\n";
-    cout<< player[0].pemain <<" Adalah Pemain Tercupu Sepanjang Sejarah Dengan Skor " << player[0].skor << "\n";
-
-    system("pause");
+    cout<< player[3].pemain <<" Adalah Pemain Tercupu Sepanjang Sejarah Dengan Skor " << player[3].skor << "\n";
+    cout<<"==============================================================\n";
 }
 
 bool sort_skor(players const& lhs,players const&rhs){
@@ -122,7 +113,3 @@ bool sort_skor(players const& lhs,players const&rhs){
         return lhs.skor > rhs.skor;
 }
 
-bool terendah(players const& lhs,players const&rhs){
-    if(lhs.skor != rhs.skor)
-            return lhs.skor < rhs.skor;
-}
