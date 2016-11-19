@@ -17,6 +17,7 @@ void hitungSkor();
 void lihatSkor();
 void resetSkor();
 void hallofShame();
+void bapakRT();
 bool sort_skor(players const& lhs,players const&rhs);
 bool terendah(players const& lhs,players const&rhs);
 
@@ -65,6 +66,8 @@ int main(int argc, char *argv[])
     getch();
     system("cls");
     lihatSkor();
+    bapakRT();
+    system("Pause");
 }
 
 void tambahPemain(){
@@ -105,6 +108,12 @@ void resetSkor(){
 
 void hallofShame(){
     cout<< player[3].pemain <<" Adalah Pemain Tercupu Sepanjang Sejarah Dengan Skor " << player[3].skor << "\n";
+    cout<<"==============================================================\n";
+}
+
+void bapakRT(){
+    cout<<"Selamat!!!! " <<player[3].pemain <<" Terpilih Sebagai RT Dengan Skor " << player[3].skor << "\n";
+    cout<<"Semoga Bapak " <<player[3].pemain <<" Bisa menjalankan amanahnya dengan baik.\n";
     cout<<"==============================================================\n";
 }
 
