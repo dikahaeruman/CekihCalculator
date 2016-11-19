@@ -19,7 +19,8 @@ void resetSkor();
 void hallofShame();
 bool sort_skor(players const& lhs,players const&rhs);
 bool terendah(players const& lhs,players const&rhs);
-int main()
+
+int main(int argc, char *argv[])
 {
 
     int pilih=0,endgame;
@@ -56,7 +57,7 @@ int main()
         break;
     }
     case 5:{
-      std::abort();
+      return EXIT_SUCCESS;
     }
             }
     }
