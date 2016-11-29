@@ -13,6 +13,7 @@ string pemain;
 
 int round = 0,skorTemp = 0,endgame;
 
+void nyemplung();
 void tambahPemain();
 void hitungSkor();
 void lihatSkor();
@@ -34,8 +35,6 @@ int main(int argc, char *argv[])
         cout << "Input Salah!!!!\nMasukan Skor Maksimal: ";
         cin>>endgame;
     }
-    /*int invEndGame = 0;
-    invEndGame = invEndGame - endgame;*/
     while((player[0].skor < endgame && player[1].skor < endgame && player[2].skor < endgame && player[3].skor < endgame) && (player[0].skor > -endgame && player[1].skor > -endgame && player[2].skor > -endgame && player[3].skor > -endgame)){
     system("cls");
     cout<<"==============================================================\n";
@@ -57,6 +56,7 @@ int main(int argc, char *argv[])
     }
     case 2:{
         hitungSkor();
+        nyemplung();
         break;
     }
     case 3:{
@@ -127,6 +127,16 @@ void bapakRT(){
     cout<<"Selamat!!!! " <<player[3].pemain <<" Terpilih Sebagai RT Dengan Skor " << player[3].skor << "\n";
     cout<<"Semoga Bapak " <<player[3].pemain <<" Bisa menjalankan amanahnya dengan baik.\n";
     cout<<"==============================================================\n";
+}
+
+void nyemplung(){
+    if(player[0].skor > 100){
+     for(int v = 1;v <= 3;v++){
+        if(player[v].skor > 0 && player[v].skor > player[0].skor){
+                player[0].skor = 0;
+                }
+        }
+     }
 }
 
 bool sort_skor(players const& lhs,players const&rhs){
